@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>One OS – Core Cockpit</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="grain-layer"></div>
+
+  <div class="app-shell">
+    <!-- Top beam / header strip -->
+    <header class="top-rail">
+      <div class="top-rail-left">
+        <span class="top-logo-dot"></span>
+        <span class="top-logo-text">One OS</span>
+      </div>
+      <div class="top-rail-right">
+        <span class="top-pill" id="topModeIndicator">Guidance</span>
+      </div>
+    </header>
+
+    <!-- Main content -->
+    <main class="main-layout">
+      <!-- Intro / placeholder panel (per-page true/false) -->
+      <section id="introPanel" class="intro-panel">
+        <h1 id="introTitle">Hub Overview</h1>
+        <p id="introBody">
+          This is a placeholder content window. You can change this copy or
+          turn this entire panel on/off per page in <code>OneOSSettings.pages</code>.
+        </p>
+      </section>
+
+      <!-- Core content area that changes per page -->
+      <section id="viewContainer" class="view-container">
+        <!-- Populated by app.js -->
+      </section>
+    </main>
+  </div>
+
+  <!-- Global Nav / Footer -->
+  <nav class="global-nav" id="globalNav">
+    <div class="global-nav-shell">
+      <!-- Left: Modes -->
+      <button
+        type="button"
+        class="nav-btn"
+        data-view="modes"
+        id="navModesBtn"
+      >
+        <span class="nav-btn-label">Modes</span>
+      </button>
+
+      <!-- Center: Home orb + Support peeking under -->
+      <div class="nav-home-stack">
+        <button
+          type="button"
+          class="nav-home-btn"
+          data-view="home"
+          id="navHomeBtn"
+          aria-label="Home"
+        >
+          <span class="nav-home-icon">◎</span>
+        </button>
+
+        <button
+          type="button"
+          class="nav-support-link"
+          id="navSupportBtn"
+        >
+          Support
+        </button>
+      </div>
+
+      <!-- Right: Settings -->
+      <button
+        type="button"
+        class="nav-btn"
+        data-view="settings"
+        id="navSettingsBtn"
+      >
+        <span class="nav-btn-label">Settings</span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Overlay panels (placeholders for now) -->
+  <div class="overlay-backdrop" id="overlayBackdrop"></div>
+
+  <section class="overlay-panel" id="modesOverlay">
+    <header class="overlay-header">
+      <h2>Modes</h2>
+      <button class="overlay-close" data-overlay-close>×</button>
+    </header>
+    <div class="overlay-body">
+      <p>
+        Placeholder for future modes. You can wire actual modes here
+        (Creation, Guidance, Observation, Sync, etc.).
+      </p>
+      <ul class="overlay-list">
+        <li>Creation Mode (manual control)</li>
+        <li>Guidance Mode (autonomous learning)</li>
+        <li>Observation Mode (passive archival)</li>
+        <li>Sync Mode (collaborative instances)</li>
+        <li>Resonance Mode (multi-project harmony)</li>
+        <li>Dream Mode (sandbox simulation)</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="overlay-panel" id="settingsOverlay">
+    <header class="overlay-header">
+      <h2>Settings</h2>
+      <button class="overlay-close" data-overlay-close>×</button>
+    </header>
+    <div class="overlay-body">
+      <p>
+        Placeholder for One OS settings. Edit <code>OneOSSettings</code> in
+        <code>app.js</code> to expose real toggles here.
+      </p>
+      <ul class="overlay-list">
+        <li>Theme / Skin selection</li>
+        <li>Intro panel visibility per page</li>
+        <li>Support link / About link</li>
+        <li>Animation sensitivity</li>
+        <li>Default mode (Creation / Guidance)</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="overlay-panel" id="supportOverlay">
+    <header class="overlay-header">
+      <h2 id="supportOverlayTitle">Support</h2>
+      <button class="overlay-close" data-overlay-close>×</button>
+    </header>
+    <div class="overlay-body">
+      <p id="supportOverlayBody">
+        This is placeholder support/about text. You can change the label of the
+        button (“Support”, “About”, “Contact”, etc.) and update this copy in
+        <code>OneOSSettings.support</code>.
+      </p>
+    </div>
+  </section>
+
+  <!-- Scripts -->
+  <script src="components.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
